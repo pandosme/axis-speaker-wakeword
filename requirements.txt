@@ -1,0 +1,17 @@
+# Core Dependencies
+python-dotenv==1.0.0
+pyyaml==6.0.1
+paho-mqtt==1.6.1
+
+# Audio Processing
+numpy==1.24.3
+
+# Wake Word Detection
+pvporcupine==3.0.2
+
+# Voice Activity Detection (VAD)
+torch==2.1.0
+torchaudio==2.1.0
+
+# Utilities
+requests==2.31.0
