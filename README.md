@@ -11,17 +11,17 @@ This service acts as a bridge between Axis network audio devices and the Voice A
 ```
 ┌─────────────────┐         RTSP          ┌──────────────────────┐
 │ Axis Speaker    │◄──────────────────────│ Wakeword Monitor     │
-│ (kontoret)      │                        │ - Porcupine Wake Word│
-└─────────────────┘                        │ - Silero VAD         │
-                                           │ - MQTT Publisher     │
+│ (kontoret)      │                       │ - Porcupine Wake Word│
+└─────────────────┘                       │ - Silero VAD         │
+                                          │ - MQTT Publisher     │
 ┌─────────────────┐         RTSP          └──────────┬───────────┘
 │ Axis Speaker    │◄──────────────────────           │
-│ (kitchen)       │                                   │ MQTT
-└─────────────────┘                                   │
-                                                      ▼
+│ (kitchen)       │                                  │ MQTT
+└─────────────────┘                                  │
+                                                     ▼
                                            ┌──────────────────────┐
                                            │ MQTT Broker          │
-                                           │ (192.168.0.57:1883)    │
+                                           │ (192.168.0.57:1883)  │
                                            └──────────┬───────────┘
                                                       │
                                                       │ MQTT Topics
