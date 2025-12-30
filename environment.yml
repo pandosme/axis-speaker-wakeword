@@ -1,0 +1,17 @@
+name: wakeword
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.24.0
+  - pytorch>=2.0.0
+  - torchaudio>=2.0.0
+  - pip:
+      - python-dotenv>=1.0.0
+      - pyyaml>=6.0
+      - paho-mqtt>=1.6.1
+      - pvporcupine>=3.0.0
+      - requests>=2.31.0

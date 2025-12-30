@@ -1,0 +1,67 @@
+# ============================================================================
+# Axis Speaker Wakeword Monitor Configuration
+# ============================================================================
+
+# ============================================================================
+# Axis Device Configuration
+# ============================================================================
+axis:
+  devices:
+    - name: "Office"
+      id: "office"
+      address: "http://192.168.1.100"
+      audio_source: 0
+      
+    # Add more devices as needed
+    # - name: "Kitchen"
+    #   id: "kitchen"
+    #   address: "http://192.168.1.101"
+    #   audio_source: 0
+
+# ============================================================================
+# MQTT Configuration
+# ============================================================================
+mqtt:
+  broker: "192.168.1.80"
+  port: 1883
+  client_id_prefix: "axis_audio_service"
+  topics:
+    wakeword: "voice/listen/start/{device_id}"
+    vad_stop: "voice/listen/stop/{device_id}"
+  qos: 1
+  retain: false
+
+# ============================================================================
+# Audio Processing Configuration
+# ============================================================================
+audio:
+  sample_rate: 16000
+  codec: "g711"
+  bitrate: 32000
+  chunk_duration: 0.08
+
+# ============================================================================
+# Wake Word Configuration (Porcupine)
+# ============================================================================
+wakeword:
+  model: "porcupine"
+  threshold: 0.5
+  inference_framework: "onnx"
+
+# ============================================================================
+# VAD (Voice Activity Detection) Configuration
+# ============================================================================
+vad:
+  threshold: 0.5
+  min_recording_time_ms: 1500
+  min_silence_duration_ms: 800
+  max_recording_time_ms: 7000
+  speech_pad_ms: 30
+
+# ============================================================================
+# Service Configuration
+# ============================================================================
+service:
+  log_level: "INFO"
+  reconnect_delay: 5
+  health_check_interval: 60
