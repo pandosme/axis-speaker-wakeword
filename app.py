@@ -58,9 +58,7 @@ class DeviceMonitor:
         mqtt_config = shared_config['mqtt']
         self.topics = {
             'wakeword': mqtt_config['topics']['wakeword'].replace('{device_id}', self.device_id),
-            'vad_start': mqtt_config['topics']['vad_start'].replace('{device_id}', self.device_id),
             'vad_stop': mqtt_config['topics']['vad_stop'].replace('{device_id}', self.device_id),
-            'status': mqtt_config['topics']['status'].replace('{device_id}', self.device_id),
         }
     
     def initialize(self, mqtt_client, vad_model):
